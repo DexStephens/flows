@@ -1,0 +1,122 @@
+* {
+  box-sizing: border-box;
+}
+
+html,
+body {
+  height: 100vh; /* Ensures full height */
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+}
+
+.box1 {
+  grid-area: 1 / 1 / 4 / 2;
+}
+
+.header {
+  grid-area: hd;
+}
+.content {
+  grid-area: main;
+  display: flex;
+  justify-content: space-between;
+}
+.sidebar {
+  grid-area: sd;
+}
+
+#main-page {
+  display: grid;
+  grid-template-columns: clamp(220px, 30vw, 440px) 1fr;
+  grid-template-rows: 56px 1fr;
+  grid-template-areas:
+    "hd hd"
+    "sd main";
+}
+
+#main-page > div {
+  border: 2px solid #ffa94d;
+  border-radius: 5px;
+  background-color: #ffd8a8;
+  padding: 1em;
+  color: #d9480f;
+}
+
+.boxy {
+  height: 100px;
+  width: 100px;
+  border: 2px solid black;
+  border-radius: 5%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: red;
+  color: black;
+}
+
+.box {
+  width: 100px;
+  height: 100px;
+  background: lightblue;
+  position: absolute;
+  cursor: grab;
+  border: 1px solid grey;
+  border-radius: 5%;
+  box-shadow: 1px 1px gray;
+}
+
+.circle {
+  position: absolute;
+  width: 20px;
+  height: 20px;
+  background-color: gray;
+  border-radius: 50%;
+  opacity: 0;
+  transition: opacity 0.3s ease-in-out, transform 0.3s ease,
+    box-shadow 0.3s ease, border 0.3s ease;
+}
+
+.circle.top {
+  top: 0;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+.circle.bottom {
+  bottom: 0;
+  left: 50%;
+  transform: translate(-50%, 50%);
+}
+.circle.left {
+  left: 0;
+  top: 50%;
+  transform: translate(-50%, -50%);
+}
+.circle.right {
+  right: 0;
+  top: 50%;
+  transform: translate(50%, -50%);
+}
+
+.circle.top:hover,
+.circle.left:hover {
+  transform: translate(-50%, -50%) scale(1.05); /* Enlarges by 30% */
+  box-shadow: 0px 5px 15px rgba(0, 0, 0, 0.3); /* Adds shadow */
+  border: 3px solid black; /* Changes border */
+}
+
+.circle.right:hover {
+  transform: translate(50%, -50%) scale(1.05); /* Enlarges by 30% */
+  box-shadow: 0px 5px 15px rgba(0, 0, 0, 0.3); /* Adds shadow */
+  border: 3px solid black; /* Changes border */
+}
+
+.circle.bottom:hover {
+  transform: translate(-50%, 50%) scale(1.05); /* Enlarges by 30% */
+  box-shadow: 0px 5px 15px rgba(0, 0, 0, 0.3); /* Adds shadow */
+  border: 3px solid black; /* Changes border */
+}
+
+.box:hover .circle {
+  opacity: 1;
+}

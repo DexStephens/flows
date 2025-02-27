@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="./css/index.css" />
+    <title>Flows</title>
+  </head>
+  <body id="main-page">
+    <svg
+      id="svgCanvas"
+      style="
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100vw;
+        height: 100vh;
+        border: 1px solid black;
+      "
+    ></svg>
+
+    <div class="header">Header</div>
+    <div class="sidebar">Sidebar</div>
+    <div id="board" class="content">
+      <div id="box-1" class="box">
+        <div class="circle top"></div>
+        <div class="circle left"></div>
+        <div class="circle right"></div>
+        <div class="circle bottom"></div>
+      </div>
+    </div>
+    <script type="module">
+      import { startup } from "./js/index.js";
+
+      function ready(readyListener) {
+        if (document.readyState === "loading") {
+          document.addEventListener("DOMContentLoaded", readyListener);
+        } else {
+          readyListener();
+        }
+      }
+
+      ready(startup);
+    </script>
+  </body>
+</html>
