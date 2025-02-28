@@ -7,26 +7,20 @@
     <title>Flows</title>
   </head>
   <body id="main-page">
-    <svg
-      id="svgCanvas"
-      style="
-        position: absolute;
-        top: 0;
-        left: 0;
-        width: 100vw;
-        height: 100vh;
-        border: 1px solid black;
-      "
-    ></svg>
-
-    <div class="header">Header</div>
-    <div class="sidebar">Sidebar</div>
-    <div id="board" class="content">
-      <div id="box-1" class="box">
-        <div class="circle top"></div>
-        <div class="circle left"></div>
-        <div class="circle right"></div>
-        <div class="circle bottom"></div>
+    <div class="header grid-section">Header</div>
+    <div class="body">
+      <div class="sidebar grid-section">Sidebar</div>
+      <div id="board" class="content grid-section">
+        <svg
+          id="svgCanvas"
+          style="position: absolute; top: 0; left: 0; border: 1px solid black"
+        ></svg>
+        <div id="box-1" class="box">
+          <div class="circle top"></div>
+          <div class="circle left"></div>
+          <div class="circle right"></div>
+          <div class="circle bottom"></div>
+        </div>
       </div>
     </div>
     <script type="module">

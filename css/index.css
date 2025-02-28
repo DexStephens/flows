@@ -4,38 +4,20 @@
 
 html,
 body {
-  height: 100vh; /* Ensures full height */
   margin: 0;
   padding: 0;
   overflow: hidden;
 }
 
-.box1 {
-  grid-area: 1 / 1 / 4 / 2;
-}
-
-.header {
-  grid-area: hd;
-}
-.content {
-  grid-area: main;
-  display: flex;
-  justify-content: space-between;
-}
-.sidebar {
-  grid-area: sd;
-}
-
 #main-page {
+  height: 100vh;
+  width: 100vw;
   display: grid;
-  grid-template-columns: clamp(220px, 30vw, 440px) 1fr;
+  grid-template-columns: 1fr;
   grid-template-rows: 56px 1fr;
-  grid-template-areas:
-    "hd hd"
-    "sd main";
 }
 
-#main-page > div {
+.grid-section {
   border: 2px solid #ffa94d;
   border-radius: 5px;
   background-color: #ffd8a8;
@@ -43,16 +25,15 @@ body {
   color: #d9480f;
 }
 
-.boxy {
-  height: 100px;
-  width: 100px;
-  border: 2px solid black;
-  border-radius: 5%;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  background-color: red;
-  color: black;
+.body {
+  display: grid;
+  grid-template-columns: 225px 1fr;
+  overflow: hidden;
+}
+
+.content {
+  overflow: auto;
+  position: relative;
 }
 
 .box {
