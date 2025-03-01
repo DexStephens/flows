@@ -31,7 +31,6 @@ function circleClick(event) {
     (classList.includes("top") && lineTop - 100 < 0) ||
     (classList.includes("left") && lineLeft - 100 < 0)
   ) {
-    // NEEDSWORK: there is more to it than just the left or top, we need to check the direction
     return;
   }
 
