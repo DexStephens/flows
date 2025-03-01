@@ -27,6 +27,12 @@ function circleClick(event) {
 
   if (lineTop + 100 > svgRect.height || lineLeft + 100 > svgRect.width) {
     resizeSvgCanvas();
+  } else if (
+    (classList.includes("top") && lineTop - 100 < 0) ||
+    (classList.includes("left") && lineLeft - 100 < 0)
+  ) {
+    // NEEDSWORK: there is more to it than just the left or top, we need to check the direction
+    return;
   }
 
   drawLine(circleLeft, circleTop, lineLeft, lineTop);
